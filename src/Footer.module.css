@@ -1,0 +1,55 @@
+.footer {
+  background-color: #8d7a5b;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.links {
+  margin-bottom: 20px;
+}
+
+.links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.socialIcons {
+  margin-bottom: 20px;
+}
+
+.socialIcons a {
+  margin: 0 10px;
+}
+
+.socialIcons img {
+  width: 24px;
+  height: 24px;
+}
+
+.backToTop {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.backToTop:hover {
+  color: #4e412d;
+}
+
+.paymentMethods {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.paymentLogo {
+  width: 3.5em;
+  height: auto;
+  object-fit: contain;
+}

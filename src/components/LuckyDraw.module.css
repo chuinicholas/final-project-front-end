@@ -1,0 +1,67 @@
+.container {
+  width: 300px;
+  height: 430px;
+  overflow: scroll;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.innerBox {
+  height: 1000000000px;
+}
+
+.card {
+  position: sticky;
+  top: 40px;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.cover {
+  width: 300px;
+  height: 430px;
+  background-color: #909090;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #eeeeee;
+}
+
+.cover > img {
+  margin-left: 30px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 200px;
+    height: 280px;
+  }
+
+  .cover {
+    width: 220px;
+    height: 280px;
+  }
+
+  .cover > img {
+    margin-left: 15px;
+  }
+
+  Card {
+    margin-top: 100px;
+  }
+}

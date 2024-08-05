@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+.outlet {
+  width: 100%;
+  padding: 20px 80px;
+}
+.footer {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .outlet {
+    padding: 5px;
+  }
+}

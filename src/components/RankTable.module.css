@@ -1,0 +1,203 @@
+.container {
+  height: 430px;
+  width: 80%;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.leftBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.rankImg {
+  max-height: 80%;
+  position: relative;
+  top: -30px;
+  left: -10px;
+}
+
+.top3Box {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #8d7a5b;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.top1 {
+  background-color: #f3cd43;
+  height: 40%;
+  display: flex;
+  border-radius: 20px;
+  justify-content: space-around;
+}
+
+.top2 {
+  background-color: #d0cec5;
+  height: 30%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top3 {
+  background-color: #eaa366;
+  height: 30%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.restRankBox {
+  width: 38%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: scroll;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #8d7a5b;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.restRankBox::-webkit-scrollbar {
+  display: none;
+}
+
+.restRank {
+  min-height: 80px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  background-color: #ece9e3;
+}
+
+.foodPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foodName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  object-fit: cover;
+}
+
+.sales > button {
+  font-size: 1.1rem;
+}
+
+.foodName > p {
+  font-size: 20px;
+}
+
+.top1 > .foodPic > img {
+  height: 100px;
+  width: 120px;
+}
+
+.top2 > .foodPic > img {
+  height: 80px;
+  width: 100px;
+}
+
+.top3 > .foodPic > img {
+  height: 70px;
+  width: 90px;
+}
+
+.restRank > .foodPic > img {
+  height: 60px;
+  width: 80px;
+}
+
+@media (max-width: 600px) {
+  .rankImg {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+    height: 600px;
+    width: 100%;
+    padding: 10px;
+    overflow: auto;
+    gap: 10px;
+  }
+
+  .top3Box {
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    gap: 5px;
+  }
+
+  .restRankBox {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+  }
+
+  .foodName > p {
+    font-size: 14px;
+  }
+
+  .top1 > .foodPic > img {
+    height: 70px;
+    width: 90px;
+  }
+
+  .top2 > .foodPic > img {
+    height: 50px;
+    width: 70px;
+  }
+
+  .top3 > .foodPic > img {
+    height: 40px;
+    width: 60px;
+  }
+
+  .restRank > .foodPic > img {
+    height: 30px;
+    width: 50px;
+  }
+
+  .sales > button {
+    font-size: 0.8rem;
+  }
+
+  .restRank {
+    min-height: 50px;
+  }
+}

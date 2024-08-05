@@ -1,0 +1,44 @@
+.sidebar {
+  padding: 10px;
+  /* background-color: #f0f0f0; */
+  /* background-color: #d1cabd; */
+  border-radius: 20px;
+}
+
+.drawerPaper {
+  /* background-color: #d1cabd; */
+  /* background-color: #f0f0f0; */
+  width: 340px;
+  padding: 10px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  /* border-radius: 20px; */
+}
+.drawerContent {
+  height: inherit;
+  width: 100%;
+  padding: 0 10px 10px 10px;
+  border-radius: 30px;
+  background-color: #ede9e3;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.drawerContent::-webkit-scrollbar {
+  display: none;
+}
+/* .drawerItem {
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: bold;
+  font-style: normal;
+}
+.drawerButton {
+  border-radius: 30px;
+  background-color: aqua;
+} */
+
+.btnBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

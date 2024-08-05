@@ -1,0 +1,21 @@
+.payBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border-radius: 20px;
+    padding: 30px;
+    background-image: url("https://blog.macsales.com/wp-content/uploads/2018/06/Mojave-Day_preview.jpeg");
+    background-size: cover;
+    gap: 20px;
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+.container {
+    height: 72.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}

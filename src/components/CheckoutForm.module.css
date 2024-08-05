@@ -1,0 +1,39 @@
+.paymentForm {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px !important;
+  background-color: white;
+  box-shadow: rgba(44, 34, 10, 0.649) 10px 15px 15px !important;
+ 
+}
+
+.paymentElement {
+  margin-bottom: 20px;
+ 
+}
+
+.submitButton {
+  background-color: #8d7a5b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px !important;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.submitButton:hover {
+  background-color: #6b5c44;
+}
+
+.submitButtonDisabled {
+  background-color: #ccc;
+}
+
+.paymentMessage {
+  margin-top: 20px;
+  color: #8d7a5b;
+}
