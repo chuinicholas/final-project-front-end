@@ -151,7 +151,7 @@ function Register() {
                 <label
                   style={{ display: "flex" }}
                   for="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   名稱
                 </label>
@@ -160,7 +160,7 @@ function Register() {
                     value={input["name"]}
                     onChange={handleNameChange}
                     type="text"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5       "
                     required
                   />
                 </div>
@@ -172,7 +172,7 @@ function Register() {
                 <label
                   style={{ display: "flex" }}
                   for="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   電郵
                 </label>
@@ -181,7 +181,7 @@ function Register() {
                     value={input["email"]}
                     onChange={handleEmailChange}
                     type="email"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5       "
                     required
                   />
                 </div>
@@ -193,7 +193,7 @@ function Register() {
                 <label
                   style={{ display: "flex" }}
                   for="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   電話
                 </label>
@@ -202,7 +202,7 @@ function Register() {
                     value={input["tel"]}
                     onChange={handleTelChange}
                     type="text"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5       "
                     required
                   />
                 </div>
@@ -214,7 +214,7 @@ function Register() {
                 <label
                   style={{ display: "flex" }}
                   for="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   密碼
                 </label>
@@ -223,7 +223,7 @@ function Register() {
                     value={input["password"]}
                     onChange={handlePwChange}
                     type="password"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5       "
                     required
                   />
                 </div>
@@ -234,7 +234,7 @@ function Register() {
                 <label
                   style={{ display: "flex" }}
                   for="repeat-password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
                 >
                   確認密碼
                 </label>
@@ -243,7 +243,7 @@ function Register() {
                     value={input["confirmPassword"]}
                     onChange={handleConfirmPwChange}
                     type="password"
-                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500 dark:shadow-sm-light"
+                    className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5       "
                     required
                   />
                 </div>
@@ -254,7 +254,7 @@ function Register() {
               <button
                 disabled={loading}
                 type="submit"
-                className="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                className="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   "
               >
                 注册會員
               </button>
@@ -262,13 +262,10 @@ function Register() {
 
             <div
               style={{ marginTop: "20px" }}
-              className="text-sm font-medium text-gray-500 dark:text-gray-300"
+              className="text-sm font-medium text-gray-500"
             >
               已經係會員?{" "}
-              <Link
-                to="/login"
-                className="text-gray-700 hover:underline dark:text-gray-500"
-              >
+              <Link to="/login" className="text-gray-700 hover:underline">
                 登入
               </Link>
             </div>
