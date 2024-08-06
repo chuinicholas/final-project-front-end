@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import DrawerComponent from "./components/DrawerComponent";
 import Avatar from "@mui/material/Avatar";
 // import HomeIcon from "@mui/icons-material/Home";
-import HomeIcon from "./image/fav.png"
+import HomeIcon from "./image/fav.png";
 import { grey } from "@mui/material/colors";
 import { useAuth } from "./components/contexts/AuthContext";
 import { auth } from "./components/firebase";
@@ -17,7 +17,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Logout from "@mui/icons-material/Logout";
-import 'animate.css';
+import "animate.css";
 
 const Header = ({ scrollPosition_root, chosenFoods }) => {
   const [animate, setAnimate] = useState(false);
@@ -69,11 +69,13 @@ const Header = ({ scrollPosition_root, chosenFoods }) => {
           <div className={styles.leftContainer}>
             <Link to="/home">
               <div
-                className={`animate__animated ${animate ? 'animate__headShake' : ''}`}
+                className={`animate__animated ${
+                  animate ? "animate__headShake" : ""
+                }`}
                 onClick={handleAnimationClick}
               >
                 <div className={styles.flexContainer}>
-                  <img src={HomeIcon} alt="Home" style={{ width: '50px', height: '50px' }} />
+                  <img src={HomeIcon} alt="Home" />
                   <h1 className="animate__animated animate__headShake">
                     Grab & Go
                   </h1>
