@@ -35,7 +35,7 @@ export default function Pay() {
         .then((res) => res.json())
         .then((data) => setClientSecret(data.clientSecret));
       try {
-        let result = await fetch(`${process.env.API_URL}/sales`, {
+        let result = await fetch(`${process.env.REACT_APP_API_URL}/sales`, {
           method: "PATCH",
           body: JSON.stringify(chosenFoods),
           headers: {

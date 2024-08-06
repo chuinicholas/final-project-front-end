@@ -22,7 +22,7 @@ const Record = () => {
     async function fetchUserPrevOrders() {
       try {
         const res = await fetch(
-          `${process.env.API_URL}/userFav/?email=${currentUser.email}`
+          `${process.env.REACT_APP_API_URL}/userFav/?email=${currentUser.email}`
         );
         const result = await res.json();
         setUserPrevOrders(result[0]["prevOrders"]);

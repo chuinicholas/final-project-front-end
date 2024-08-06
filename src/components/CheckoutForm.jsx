@@ -16,12 +16,16 @@ export default function CheckoutForm() {
   const shoppingDataPool = outletContextObj["shoppingDataPool"][0];
   const chosenFoods = outletContextObj["chosenFoods"];
   const navigate = useNavigate();
+  let payload_url = process.env.LOCAL_URL;
+  if (process.env.VERCEL_URL) {
+    payload_url = `https://${process.env.VERCEL_URL}`;
+  }
 
   console.log(chosenFoods);
 
   async function addSales() {
     try {
-      const result = await fetch(`${process.env.API_URL}/sales`, {
+      const result = await fetch(`${process.env.REACT_APP_API_URL}/sales`, {
         method: "PATCH",
         body: JSON.stringify(chosenFoods),
         headers: {
@@ -36,13 +40,16 @@ export default function CheckoutForm() {
 
   async function addPrevOrders() {
     try {
-      const result = await fetch(`${process.env.API_URL}/addPrevOrders`, {
-        method: "PATCH",
-        body: JSON.stringify(shoppingDataPool),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const result = await fetch(
+        `${process.env.REACT_APP_API_URL}/addPrevOrders`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(shoppingDataPool),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       console.log(result);
     } catch (error) {
       console.log(error);
@@ -93,7 +100,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:3000/payLoad",
+        return_url: `${payload_url}/payLoad`,
       },
     });
     // This point will only be reached if there is an immediate error when

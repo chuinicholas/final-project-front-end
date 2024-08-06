@@ -19,7 +19,7 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
     async function fetchUserFav() {
       try {
         const res = await fetch(
-          `${process.env.API_URL}/userFav/?email=${currentUser.email}`
+          `${process.env.REACT_APP_API_URL}/userFav/?email=${currentUser.email}`
         );
         const result = await res.json();
         console.log(result[0]["favouriteItem"]);
@@ -43,13 +43,16 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
         price: price,
         foodPic: foodPic,
       };
-      const result = await fetch(`${process.env.API_URL}/addFavItem`, {
-        method: "PATCH",
-        body: JSON.stringify(favItem),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const result = await fetch(
+        `${process.env.REACT_APP_API_URL}/addFavItem`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(favItem),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setIsFav(!isFav);
       console.log(result);
     } catch (error) {
@@ -65,13 +68,16 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
         price: price,
         foodPic: foodPic,
       };
-      const result = await fetch(`${process.env.API_URL}/removeFavItem`, {
-        method: "PATCH",
-        body: JSON.stringify(favItem),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const result = await fetch(
+        `${process.env.REACT_APP_API_URL}/removeFavItem`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(favItem),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setIsFav(!isFav);
       console.log(result);
     } catch (error) {

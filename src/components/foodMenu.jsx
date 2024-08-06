@@ -40,7 +40,7 @@ export default function FoodMenu({ scrollPosition_home }) {
         drink: [],
       };
       try {
-        const res = await fetch(`${process.env.API_URL}/allproducts`);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/allproducts`);
         const result = await res.json();
         for (let i = 0; i < result.length; i++) {
           for (let l = 0; l < result[i]["category"].length; l++) {

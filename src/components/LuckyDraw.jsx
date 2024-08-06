@@ -16,7 +16,7 @@ function LuckyDraw() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const res = await fetch(`${process.env.API_URL}/allproducts`);
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/allproducts`);
         const result = await res.json();
         setAllProducts(result);
       } catch (error) {

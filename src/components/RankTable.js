@@ -24,11 +24,13 @@ function RankTable() {
   const [ranked, setRanked] = useState([]);
   const [outletContextObj] = useOutletContext();
   const addFood = outletContextObj["addFood"];
-
+  console.log(`${process.env.REACT_APP_API_URL}/rankedProducts`);
   useEffect(() => {
     async function fetchRanked() {
       try {
-        const res = await fetch(`${process.env.API_URL}/rankedProducts`);
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/rankedProducts`
+        );
         const result = await res.json();
         setRanked(result);
       } catch (error) {

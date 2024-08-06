@@ -75,7 +75,7 @@ function Register() {
         }
         console.log("User registered successfully!");
 
-        let result = await fetch(`${process.env.API_URL}/register`, {
+        let result = await fetch(`${process.env.REACT_APP_API_URL}/register`, {
           method: "post",
           body: JSON.stringify(input),
           headers: {
