@@ -100,7 +100,7 @@ export default function CheckoutForm() {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `${payload_url}/payLoad`,
+        return_url: "https://final-project-front-end-seven.vercel.app/payLoad",
       },
     });
     // This point will only be reached if there is an immediate error when
