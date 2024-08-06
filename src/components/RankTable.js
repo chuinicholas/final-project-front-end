@@ -28,7 +28,7 @@ function RankTable() {
   useEffect(() => {
     async function fetchRanked() {
       try {
-        const res = await fetch("http://localhost:3001/rankedProducts");
+        const res = await fetch(`${process.env.API_URL}/rankedProducts`);
         const result = await res.json();
         setRanked(result);
       } catch (error) {

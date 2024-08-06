@@ -16,7 +16,7 @@ function LuckyDraw() {
   useEffect(() => {
     async function fetchAllProducts() {
       try {
-        const res = await fetch("http://localhost:3001/allproducts");
+        const res = await fetch(`${process.env.API_URL}/allproducts`);
         const result = await res.json();
         setAllProducts(result);
       } catch (error) {
@@ -42,7 +42,7 @@ function LuckyDraw() {
       // .removeEventListener("scroll", handleScroll);
     };
   }, [allProducts]);
-  
+
   return (
     <div onScroll={handleTheScroll} className={styles.container}>
       <div className={styles.cover}>

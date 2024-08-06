@@ -75,7 +75,7 @@ function Register() {
         }
         console.log("User registered successfully!");
 
-        let result = await fetch("http://localhost:3001/register", {
+        let result = await fetch(`${process.env.API_URL}/register`, {
           method: "post",
           body: JSON.stringify(input),
           headers: {

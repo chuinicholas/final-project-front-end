@@ -12,45 +12,18 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
   const { currentUser } = useAuth();
   const [outletContextObj] = useOutletContext();
   const addFood = outletContextObj["addFood"];
-  const setFavouriteFood = outletContextObj['favouriteFood'][1];
+  const setFavouriteFood = outletContextObj["favouriteFood"][1];
   const [isFav, setIsFav] = useState(false);
-  //const [userFav, setUserFav] = useState([]);
-
-  /* useEffect(() => {
-    async function fetchUserFav() {
-      try {
-        const res = await fetch(
-          `http://localhost:3001/userFav/?email=${currentUser.email}`
-        );
-        const result = await res.json();
-        //setUserFav(result[0]["favouriteItem"]);
-        // Logic to check if the current food item is liked
-        const isLiked = result[0]["favouriteItem"].some(
-          (item) => item.chineseName === chineseName
-        );
-        console.log(result[0]["favouriteItem"])
-        setFavouriteFood(result[0]["favouriteItem"])
-        setIsFav(isLiked);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchUserFav();
-  }, [currentUser, chineseName]); */
-  /* async function favFood() {
-    console.log(isFav)
-    setIsFav((prevState) => !prevState);
-  }*/
 
   useEffect(() => {
     async function fetchUserFav() {
       try {
         const res = await fetch(
-          `http://localhost:3001/userFav/?email=${currentUser.email}`
+          `${process.env.API_URL}/userFav/?email=${currentUser.email}`
         );
         const result = await res.json();
-        console.log(result[0]["favouriteItem"])
-        setFavouriteFood(result[0]["favouriteItem"])
+        console.log(result[0]["favouriteItem"]);
+        setFavouriteFood(result[0]["favouriteItem"]);
       } catch (error) {
         console.log(error);
       }
@@ -60,7 +33,7 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
 
   useEffect(() => {
     setIsFav(isFav_P);
-  }, [isFav_P])
+  }, [isFav_P]);
 
   async function addFav(chineseName, price, foodPic) {
     try {
@@ -70,7 +43,7 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
         price: price,
         foodPic: foodPic,
       };
-      const result = await fetch("http://localhost:3001/addFavItem", {
+      const result = await fetch(`${process.env.API_URL}/addFavItem`, {
         method: "PATCH",
         body: JSON.stringify(favItem),
         headers: {
@@ -92,7 +65,7 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
         price: price,
         foodPic: foodPic,
       };
-      const result = await fetch("http://localhost:3001/removeFavItem", {
+      const result = await fetch(`${process.env.API_URL}/removeFavItem`, {
         method: "PATCH",
         body: JSON.stringify(favItem),
         headers: {

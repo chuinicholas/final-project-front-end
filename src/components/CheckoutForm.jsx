@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CheckoutForm.module.css";
-import {} from 'react-router-dom';
+import {} from "react-router-dom";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import {
   PaymentElement,
@@ -13,15 +13,15 @@ export default function CheckoutForm() {
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [outletContextObj] = useOutletContext();
-  const shoppingDataPool = outletContextObj['shoppingDataPool'][0];
-  const chosenFoods = outletContextObj['chosenFoods'];
+  const shoppingDataPool = outletContextObj["shoppingDataPool"][0];
+  const chosenFoods = outletContextObj["chosenFoods"];
   const navigate = useNavigate();
 
-  console.log(chosenFoods)
+  console.log(chosenFoods);
 
   async function addSales() {
     try {
-      const result = await fetch("http://localhost:3001/sales", {
+      const result = await fetch(`${process.env.API_URL}/sales`, {
         method: "PATCH",
         body: JSON.stringify(chosenFoods),
         headers: {
@@ -36,7 +36,7 @@ export default function CheckoutForm() {
 
   async function addPrevOrders() {
     try {
-      const result = await fetch("http://localhost:3001/addPrevOrders", {
+      const result = await fetch(`${process.env.API_URL}/addPrevOrders`, {
         method: "PATCH",
         body: JSON.stringify(shoppingDataPool),
         headers: {
@@ -50,7 +50,7 @@ export default function CheckoutForm() {
   }
 
   //console.log(shoppingDataPool)
-  
+
   useEffect(() => {
     if (!stripe) {
       return;
@@ -65,8 +65,8 @@ export default function CheckoutForm() {
       switch (paymentIntent.status) {
         case "succeeded":
           setMessage("Payment succeeded!");
-          //TODO 
-          addSales()
+          //TODO
+          addSales();
           break;
         case "processing":
           setMessage("Your payment is processing.");
@@ -82,7 +82,7 @@ export default function CheckoutForm() {
   }, [stripe]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    addPrevOrders()
+    addPrevOrders();
     if (!stripe || !elements) {
       // Stripe.js hasn't yet loaded.
       // Make sure to disable form submission until Stripe.js has loaded.
@@ -117,15 +117,31 @@ export default function CheckoutForm() {
       id="payment-form"
       onSubmit={handleSubmit}
     >
-      <PaymentElement id="payment-element" options={paymentElementOptions} className={styles.paymentElement}/>
-      <button disabled={isLoading || !stripe || !elements} id="submit"  className={styles.submitButton}>
+      <PaymentElement
+        id="payment-element"
+        options={paymentElementOptions}
+        className={styles.paymentElement}
+      />
+      <button
+        disabled={isLoading || !stripe || !elements}
+        id="submit"
+        className={styles.submitButton}
+      >
         <span id="button-text">
           {/* {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"} */}
-          {isLoading ? <div className="spinner" id="spinner"></div> : `確認付款 $${shoppingDataPool['totalPrice']}`}
+          {isLoading ? (
+            <div className="spinner" id="spinner"></div>
+          ) : (
+            `確認付款 $${shoppingDataPool["totalPrice"]}`
+          )}
         </span>
       </button>
       {/* Show any error or success messages */}
-      {message && <div id="payment-message" className={styles.paymentMessage}>{message}</div>}
+      {message && (
+        <div id="payment-message" className={styles.paymentMessage}>
+          {message}
+        </div>
+      )}
     </form>
   );
 }

@@ -19,14 +19,14 @@ export default function FoodMenu({ scrollPosition_home }) {
     "dessert",
     "drink",
   ];
- 
+
   const [categoryFoods, setCategoryFoods] = useState();
   const [selectedCategory, setSelectedCategory] = useState("rice");
   //const [scrollPostion, setScrollPostion] = useState(0);
   const scrollViewRef = useRef();
   const btnContainerRef = useRef();
   const [outletContextObj] = useOutletContext();
-  const favouriteFood = outletContextObj['favouriteFood'][0];
+  const favouriteFood = outletContextObj["favouriteFood"][0];
 
   useEffect(() => {
     async function fetchData() {
@@ -38,67 +38,67 @@ export default function FoodMenu({ scrollPosition_home }) {
         vegan: [],
         dessert: [],
         drink: [],
-      }
+      };
       try {
-        const res = await fetch("http://localhost:3001/allproducts");
+        const res = await fetch(`${process.env.API_URL}/allproducts`);
         const result = await res.json();
-        for(let i = 0; i < result.length; i++) {
-          for(let l = 0; l < result[i]['category'].length; l++){
-            for(let categoryName of categoryNameArr) {
-              if(result[i]['category'][l] !== 'favorite') {
-                if(result[i]['category'][l] === categoryName) {
-                  data[categoryName].push(result[i])
-                } 
+        for (let i = 0; i < result.length; i++) {
+          for (let l = 0; l < result[i]["category"].length; l++) {
+            for (let categoryName of categoryNameArr) {
+              if (result[i]["category"][l] !== "favorite") {
+                if (result[i]["category"][l] === categoryName) {
+                  data[categoryName].push(result[i]);
+                }
               }
             }
           }
         }
-        data['favorite'] = favouriteFood
-        console.log(data)
-        setCategoryFoods(data)
+        data["favorite"] = favouriteFood;
+        console.log(data);
+        setCategoryFoods(data);
       } catch (error) {
         console.log(error);
       }
     }
     fetchData();
-  }, [favouriteFood])
+  }, [favouriteFood]);
 
   function checkIsFav(name_c) {
-    for(let i = 0; i< favouriteFood.length; i++) {
-      console.log(favouriteFood[i]['name_c'])
-      console.log(name_c)
-      if(favouriteFood[i]['name_c'] === name_c) {
-        return true
+    for (let i = 0; i < favouriteFood.length; i++) {
+      console.log(favouriteFood[i]["name_c"]);
+      console.log(name_c);
+      if (favouriteFood[i]["name_c"] === name_c) {
+        return true;
       }
     }
-    return false
+    return false;
   }
 
   function showChineseName(categoryName) {
     switch (categoryName) {
-      case 'favorite':
-        return "喜愛"
-      case 'rice':
-        return "飯"
-      case 'pasta':
-        return "意粉"
-      case 'noodle':
-        return "麵"
-      case 'vegan':
-        return "素食"
-      case 'dessert':
-        return "甜品"
-      case 'drink':
-        return "飲品"
-    } 
+      case "favorite":
+        return "喜愛";
+      case "rice":
+        return "飯";
+      case "pasta":
+        return "意粉";
+      case "noodle":
+        return "麵";
+      case "vegan":
+        return "素食";
+      case "dessert":
+        return "甜品";
+      case "drink":
+        return "飲品";
+    }
   }
   function handleButton(categroy) {
     setTimeout(() => {
       window.scrollTo({
         top: 900,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
-    }, 100) 
+    }, 100);
     setSelectedCategory(categroy);
     /* // TODO
     setScrollPostion(0)
@@ -159,16 +159,31 @@ export default function FoodMenu({ scrollPosition_home }) {
                   : `${styles.div_btnContainer}`
               }
             >
-              {categoryNameArr.map((categoryName, index) => (<>
-                {selectedCategory === categoryName? 
-                  (<button key={index} className={`${styles.btn_categroy_pressed} ${styles.btn_categroy}`} onClick={() => handleButton(categoryName)}>
-                    <label className={styles.lbl_categroy}>{showChineseName(categoryName)}</label>
-                  </button>) : 
-                  (<button key={index} className={styles.btn_categroy} onClick={() => handleButton(categoryName)}>
-                    <label className={styles.lbl_categroy}>{showChineseName(categoryName)}</label>
-                  </button>)
-                }
-              </>))}
+              {categoryNameArr.map((categoryName, index) => (
+                <>
+                  {selectedCategory === categoryName ? (
+                    <button
+                      key={index}
+                      className={`${styles.btn_categroy_pressed} ${styles.btn_categroy}`}
+                      onClick={() => handleButton(categoryName)}
+                    >
+                      <label className={styles.lbl_categroy}>
+                        {showChineseName(categoryName)}
+                      </label>
+                    </button>
+                  ) : (
+                    <button
+                      key={index}
+                      className={styles.btn_categroy}
+                      onClick={() => handleButton(categoryName)}
+                    >
+                      <label className={styles.lbl_categroy}>
+                        {showChineseName(categoryName)}
+                      </label>
+                    </button>
+                  )}
+                </>
+              ))}
             </div>
           </div>
           {/* <div className={styles.div_controlRight}>
@@ -202,17 +217,17 @@ export default function FoodMenu({ scrollPosition_home }) {
       <div className={styles.foodList_outside}>
         <div className={styles.foodList}>
           {categoryFoods &&
-          categoryFoods[selectedCategory].map((categoryFood, index) => (
-            <Card
-              className={styles.card}
-              key={index}
-              foodPic={categoryFood.img_url}
-              chineseName={categoryFood.name_c}
-              //englishName={dessert.name_e}
-              price={categoryFood.price}
-              isFav_P={checkIsFav(categoryFood.name_c)}
-            />
-          ))}
+            categoryFoods[selectedCategory].map((categoryFood, index) => (
+              <Card
+                className={styles.card}
+                key={index}
+                foodPic={categoryFood.img_url}
+                chineseName={categoryFood.name_c}
+                //englishName={dessert.name_e}
+                price={categoryFood.price}
+                isFav_P={checkIsFav(categoryFood.name_c)}
+              />
+            ))}
           {categoryFoods && categoryFoods[selectedCategory].length == 0 ? (
             <div>
               <Tooltip
