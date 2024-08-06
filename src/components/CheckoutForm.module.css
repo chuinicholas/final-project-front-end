@@ -1,17 +1,16 @@
 .paymentForm {
   max-width: 400px;
+  height: fit-content;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 15px !important;
   background-color: white;
   box-shadow: rgba(44, 34, 10, 0.649) 10px 15px 15px !important;
- 
 }
 
 .paymentElement {
   margin-bottom: 20px;
- 
 }
 
 .submitButton {
