@@ -27,7 +27,7 @@ export default function Pay() {
 
   useEffect(() => {
     async function showStripeElement() {
-      await fetch("/create-payment-intent", {
+      await fetch(`${process.env.REACT_APP_API_URL}/create-payment-intent`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
