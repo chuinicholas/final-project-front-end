@@ -21,7 +21,7 @@ function Card({ foodPic, chineseName, englishName, price, isFav_P }) {
     async function fetchUserFav() {
       try {
         const res = await fetch(
-          `${process.env.REACT_APP_API_URL}/?email=${currentUser.email}`
+          `${process.env.REACT_APP_API_URL}/userFav/?email=${currentUser.email}`
         );
         const result = await res.json();
         console.log(result[0]["favouriteItem"]);
