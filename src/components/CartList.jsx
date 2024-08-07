@@ -8,7 +8,7 @@ export default function CartList({ chineseName, foodPic, quantity, price }) {
         <div className={styles.itemName}>{chineseName}</div>
         <div className={styles.itemQuantityPrice}>
           <div className={styles.itemQuantity}>
-            <span>QTY</span>
+            <span>數量</span>
             <span>{quantity}</span>
           </div>
         </div>

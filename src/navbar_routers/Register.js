@@ -256,7 +256,7 @@ function Register() {
                 type="submit"
                 className="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   "
               >
-                注册會員
+                註册會員
               </button>
             </div>
 
@@ -273,7 +273,7 @@ function Register() {
           {pwUnmatch ? (
             <Alert severity="error">密碼不相符, 請重新輸入.</Alert>
           ) : null}
-          {successReg ? <Alert severity="success">成功注册 !</Alert> : null}
+          {successReg ? <Alert severity="success">成功註册 !</Alert> : null}
           {must6 ? <Alert severity="error">密碼最少要有6個字.</Alert> : null}
 
           {emailInUse ? <Alert severity="warning">電郵已使用.</Alert> : null}

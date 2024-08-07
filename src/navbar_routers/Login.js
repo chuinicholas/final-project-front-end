@@ -143,7 +143,7 @@ function Login() {
             <div className="text-sm font-medium text-gray-500">
               未係會員?{" "}
               <Link to="/register" className="text-gray-700 hover:underline">
-                注册會員
+                註册會員
               </Link>
             </div>
           </form>

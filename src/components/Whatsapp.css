@@ -3,9 +3,9 @@
 }
 
 .styles-module_chatHeader__gaeOA {
-  background-color: #705B38;
+  background-color: #705b38 !important;
 }
 
-input{
-  font-size: 15px;
+input {
+  font-size: 15px !important;
 }
